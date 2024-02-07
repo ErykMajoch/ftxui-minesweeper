@@ -1,0 +1,151 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "_deps/ftxui-build",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.ftxui-build-Debug-30ddb6b18b288e2bf8b7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build/_deps/ftxui-src",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "_deps/ftxui-build/examples",
+					"jsonFile" : "directory-_deps.ftxui-build.examples-Debug-b63adf88fa3160d8129e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build/_deps/ftxui-src/examples"
+				},
+				{
+					"build" : "_deps/ftxui-build/doc",
+					"jsonFile" : "directory-_deps.ftxui-build.doc-Debug-eeb6914f27c898827f79.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build/_deps/ftxui-src/doc"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Minesweeper",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"name" : "ftxui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Minesweeper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Minesweeper-Debug-92081dc19887968d1e2a.json",
+					"name" : "Minesweeper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "component::@b65f64d0ea8424dee96a",
+					"jsonFile" : "target-component-Debug-26b02fc8da8895248159.json",
+					"name" : "component",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "dom::@b65f64d0ea8424dee96a",
+					"jsonFile" : "target-dom-Debug-b105a68c161b086f65de.json",
+					"name" : "dom",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "screen::@b65f64d0ea8424dee96a",
+					"jsonFile" : "target-screen-Debug-06842a1c9831094f2fe6.json",
+					"name" : "screen",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/erykm/Desktop/ftxui-minesweeper/build",
+		"source" : "C:/Users/erykm/Desktop/ftxui-minesweeper"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

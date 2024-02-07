@@ -11,7 +11,6 @@ CTestTestfile.cmake
 _deps
 
 # Project folders
-/build
-/release
-/.idea
-
+build
+release
+.idea
