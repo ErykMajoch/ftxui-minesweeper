@@ -10,7 +10,7 @@ Board::Board(int _rows, int _columns, int _mines) {
     m_columns = _columns;
   
     while (m_mines.size() < _mines) {
-      m_mines.insert(std::make_pair(random_range(0, m_columns), random_range(0, m_rows)));
+      m_mines.insert(std::make_pair(random_range(0, m_rows), random_range(0, m_columns)));
     }
     
 }
@@ -66,7 +66,7 @@ std::string Board::get_cell(int height, int width) {
 
   if (m_open.find(pos) == m_open.end()) {
     if (m_flagged.find(pos) != m_flagged.end()) {
-      return "⚑";
+      return "f";
     } else {
       return " ";
     }

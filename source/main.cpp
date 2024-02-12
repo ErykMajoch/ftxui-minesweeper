@@ -12,16 +12,17 @@
 int main() {
   using namespace ftxui;
 
-  const int WIDTH = 20;
-  const int HEIGHT = 10;
+  const int WIDTH = 9;
+  const int HEIGHT = 9;
+  const int MINES = 10;
 
   // Create a Minesweeper board.
-  Board board(HEIGHT, WIDTH, 10);
+  Board board(HEIGHT, WIDTH, MINES);
 
   int x_highlight = 0;
   int y_highlight = 0;
 
-  auto c = Canvas(WIDTH * 4, HEIGHT * 4);
+  auto c = Canvas(WIDTH * 2, HEIGHT * 4);
   // c.DrawText(0, 0, "⚑", [](Pixel& p) {
     // p.foreground_color = Color::Red;
   // });
@@ -31,12 +32,20 @@ int main() {
     for (int i = 0; i < HEIGHT; i++) {
     for (int j = 0; j < WIDTH; j++) {
       std::string cell = board.get_cell(i, j);
-      c.DrawText(j * 4, i * 4, cell, [&](Pixel& p){
+      c.DrawText(j * 2, i * 4, (cell == "0" ? " " : cell), [&](Pixel& p){
+
+        if (cell == "0") {
+            p.background_color = Color::GrayDark;
+        }
+
+        Color temp = p.background_color;
+        // Highlighted cell
         if (i == y_highlight && j == x_highlight) {
           p.background_color = Color::GrayLight;
         } else {
-          p.background_color = Color::Default;
-        }
+            p.background_color = temp;
+          }
+
         p.bold = true;
       });
     }
@@ -56,6 +65,8 @@ int main() {
     } else if (event == Event::Character('f')) {
       Position pos = std::make_pair(y_highlight, x_highlight);
       board.flag_cell(pos);
+    } else if (event == Event::Return) {
+      board.click_cell(std::make_pair(y_highlight, x_highlight));
     }
     return true;
   });
