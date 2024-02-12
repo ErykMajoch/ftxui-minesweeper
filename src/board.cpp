@@ -86,32 +86,6 @@ char Board::get_cell(int height, int width) {
   }
 }
 
-// Display the board
-void Board::display_board() {
-  for (int y = 0; y < m_rows; y++) {
-    for (int x = 0; x < m_columns; x++) {
-      Position pos = std::make_pair(y, x);
-      if (m_mines.find(pos) != m_mines.end()) {
-          std::cout << "b ";
-      } else {
-          std::cout << ". ";
-      }
-//      if (m_open.find(pos) == m_open.end()) {
-//        if (m_flagged.find(pos) != m_flagged.end()) {
-//          std::cout << "f ";
-//        } else {
-//          std::cout << ". ";
-//        }
-//      } else if (m_mines.find(pos) != m_mines.end()) {
-//        std::cout << "b ";
-//      } else {
-//        std::cout << mine_count(pos) << " ";
-//      }
-    }
-    std::cout << "\n";
-  }
-}
-
 bool Board::game_won() {
     std::set<Position> inter = {};
     for (auto val : m_flagged) {

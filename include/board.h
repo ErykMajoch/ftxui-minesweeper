@@ -22,7 +22,6 @@ public:
   int flag_count();
   
   char get_cell(int height, int width);
-  void display_board();
   bool game_won();
 
 private:
@@ -35,6 +34,6 @@ private:
   std::set<Position> get_neighbours(Position pos);
   int mine_count(Position pos);
 
-  // Random number in range [min,max] 
+  // Random number in range [min,max)
   int random_range(int min, int max);
 };
