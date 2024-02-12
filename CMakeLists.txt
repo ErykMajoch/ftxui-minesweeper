@@ -13,7 +13,7 @@ endif()
 
 project(Minesweeper LANGUAGES CXX VERSION 1.0.0)
 
-file(GLOB_RECURSE SOURCES "source/*.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.hpp")
 
 add_executable(Minesweeper ${SOURCES} ${HEADERS})

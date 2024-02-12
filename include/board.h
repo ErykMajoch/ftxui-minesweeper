@@ -19,18 +19,18 @@ public:
   std::optional<ClickResult> click_cell(Position pos);
   void flag_cell(Position pos);
   void reset_board();
-  [[nodiscard]] bool has_lost();
+  int flag_count();
   
-  std::string get_cell(int height, int width);
+  char get_cell(int height, int width);
   void display_board();
+  bool game_won();
 
 private:
-  int m_rows = 9;
-  int m_columns = 9;
-  std::set<Position> m_mines = {};
-  std::set<Position> m_open = {};
-  std::set<Position> m_flagged = {};
-  bool m_lost = false;
+    std::set<Position> m_mines = {};
+    std::set<Position> m_flagged = {};
+    int m_rows = 9;
+    int m_columns = 9;
+    std::set<Position> m_open = {};
 
   std::set<Position> get_neighbours(Position pos);
   int mine_count(Position pos);
