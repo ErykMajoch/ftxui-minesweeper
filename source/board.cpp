@@ -1,6 +1,7 @@
 #include "../include/board.h"
 #include <algorithm>
 #include <set>
+#include <string>
 #include <utility>
 
 // Board Constructor
@@ -59,6 +60,23 @@ bool Board::has_lost() {
   return m_lost;
 }
 
+// Get the cell of pos (x,y)
+std::string Board::get_cell(int height, int width) {
+  Position pos = std::make_pair(height, width);
+
+  if (m_open.find(pos) == m_open.end()) {
+    if (m_flagged.find(pos) != m_flagged.end()) {
+      return "⚑";
+    } else {
+      return " ";
+    }
+  } else if (m_mines.find(pos) != m_mines.end()) {
+    return "b";
+  } else {
+    return std::to_string(mine_count(pos));
+  }
+}
+
 // Display the board
 void Board::display_board() {
   for (int y = 0; y < m_rows; y++) {
@@ -66,12 +84,12 @@ void Board::display_board() {
       Position pos = std::make_pair(x, y);
       if (m_open.find(pos) == m_open.end()) {
         if (m_flagged.find(pos) != m_flagged.end()) {
-          std::cout << "🚩 ";
+          std::cout << "f ";
         } else {
-          std::cout << "🟪 ";
+          std::cout << ". ";
         }
       } else if (m_mines.find(pos) != m_mines.end()) {
-        std::cout << "💣 ";
+        std::cout << "b ";
       } else {
         std::cout << mine_count(pos) << " ";
       }

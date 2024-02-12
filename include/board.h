@@ -20,7 +20,8 @@ public:
   void flag_cell(Position pos);
   void reset_board();
   [[nodiscard]] bool has_lost();
-
+  
+  std::string get_cell(int height, int width);
   void display_board();
 
 private:
